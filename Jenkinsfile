@@ -1,6 +1,10 @@
 pipeline {
-    agent { label 'agent2' }
+    agent { label 'master' }
 
+    triggers {
+        githubPush()
+    }
+    
     stages {
         stage('Build') {
             steps {
